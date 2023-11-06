@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ViewCredit</class>
+ <widget class="QDialog" name="ViewCredit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>482</width>
+    <height>423</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+  background-color: #000000;
+  font-family: Rubik;
+  color: white;
+  font-size: 16pt;
+}
+
+QPushButton#raschet
+{
+  background: #ff6600;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 18px;
+  min-width: 40px;
+  min-height: 40px; 
+}
+
+QPushButton#raschet:hover
+{
+background: #e7a477;
+color: #ffffff;
+}
+
+QPushButton#raschet:pressed
+{
+background: #ffffff;
+color: #ff6600;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QLabel" name="lbl_summa">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Сумма кредита</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="summa">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="suffix">
+        <string> ₽</string>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>100000000</number>
+       </property>
+       <property name="singleStep">
+        <number>10000</number>
+       </property>
+       <property name="value">
+        <number>100000</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QRadioButton" name="radio_anuitet">
+       <property name="text">
+        <string>Ануитетный</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="radio_diff">
+       <property name="text">
+        <string>Дифференциальный</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QLabel" name="lbl_skok_moutch_or_god">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Срок</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="spin_skok_moutch_or_god">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="singleStep">
+        <number>1</number>
+       </property>
+       <property name="value">
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="moutch_or_god">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <item>
+        <property name="text">
+         <string>Мес.</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Года</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="lbl_percent">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Процентная ставка</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="percent">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="suffix">
+        <string> %</string>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>100.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.100000000000000</double>
+       </property>
+       <property name="value">
+        <double>0.100000000000000</double>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lbl_every_moutch_pay">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Ежемесячный платеж: </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="every_moutch_pay">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="lbl_pereplata">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Переплата по кредиту: </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="pereplata">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <property name="spacing">
+      <number>80</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lbl_result">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Общая выплата: </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="result">
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="raschet">
+     <property name="maximumSize">
+      <size>
+       <width>500</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rubik</family>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Посчитать</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

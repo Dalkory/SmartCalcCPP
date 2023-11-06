@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ViewDeposit</class>
+ <widget class="QDialog" name="ViewDeposit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1035</width>
+    <height>488</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+  background-color: #000000;
+  font-family: Rubik;
+  color: white;
+  font-size: 16pt;
+}
+
+QPushButton#raschet
+{
+  background: #ff6600;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 18px;
+  min-width: 40px;
+  min-height: 40px; 
+}
+
+QPushButton#raschet:hover
+{
+background: #e7a477;
+color: #ffffff;
+}
+
+QPushButton#raschet:pressed
+{
+background: #ffffff;
+color: #ff6600;
+}</string>
+  </property>
+  <widget class="QLabel" name="lbl_periodic">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>10</y>
+     <width>251</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>16</pointsize>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string>Периодичность выплат</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>80</y>
+     <width>151</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6">
+    <item>
+     <widget class="QDateEdit" name="data_popolnenya">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="statusTip">
+       <string/>
+      </property>
+      <property name="whatsThis">
+       <string/>
+      </property>
+      <property name="accessibleName">
+       <string/>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhPreferNumbers</set>
+      </property>
+      <property name="wrapping">
+       <bool>false</bool>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
+      </property>
+      <property name="accelerated">
+       <bool>false</bool>
+      </property>
+      <property name="keyboardTracking">
+       <bool>true</bool>
+      </property>
+      <property name="displayFormat">
+       <string>dd.MM.yyyy</string>
+      </property>
+      <property name="date">
+       <date>
+        <year>2022</year>
+        <month>7</month>
+        <day>22</day>
+       </date>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDateEdit" name="data_snyatia">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="date">
+       <date>
+        <year>2022</year>
+        <month>7</month>
+        <day>22</day>
+       </date>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QCheckBox" name="kapitalizatsia">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>50</y>
+     <width>481</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>16</pointsize>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string>  Капитализация процентов</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>20</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>5</y>
+     <width>244</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QDoubleSpinBox" name="srok_mes">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="decimals">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <double>700000.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>6.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QDoubleSpinBox" name="procent">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="maximum">
+       <double>100.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>5.500000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QDoubleSpinBox" name="nalog">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QDoubleSpinBox" name="summa_vklada">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="maximum">
+       <double>99999999999999996863366107917975552.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>9800.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="raschet">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>230</y>
+     <width>511</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Рассчитать</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>5</y>
+     <width>189</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="lbl_summa_vklada">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Сумма вклада</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="lbl_srok_mes">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Срок (мес)</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="lbl_procent">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Процентная ставка</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="lbl_nalog">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Налоговая ставка</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>80</y>
+     <width>238</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QDoubleSpinBox" name="sum_popolnenya">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="maximum">
+       <double>1000000000000000.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDoubleSpinBox" name="sum_snyatia">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="maximum">
+       <double>100000000000000.000000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="error">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>280</y>
+     <width>771</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>16</pointsize>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="ostatok">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>180</y>
+     <width>211</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="maximum">
+    <double>99999999999999996863366107917975552.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>80</y>
+     <width>180</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_7">
+    <item>
+     <widget class="QLabel" name="lbl_popolnenya">
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Пополнения</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lbl_snyatia">
+      <property name="font">
+       <font>
+        <family>Rubik</family>
+        <pointsize>16</pointsize>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Частичные снятия</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>310</y>
+     <width>591</width>
+     <height>171</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="title">
+    <string>Результат</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <widget class="QWidget" name="layoutWidget_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>320</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lbl_profit">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Начисленные проценты</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbl_sum_nalog">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Сумма налога</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbl_sum_v_konce">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Rubik</family>
+         <pointsize>16</pointsize>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Сумма на вкладе к концу срока</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_7">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>30</y>
+      <width>228</width>
+      <height>120</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="profit">
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="midLineWidth">
+        <number>7</number>
+       </property>
+       <property name="text">
+        <string>0,00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="sum_nalog">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string>0,00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="sum_v_konce">
+       <property name="text">
+        <string>0,00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="lbl_ostatok">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>180</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>16</pointsize>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string>Неснижаемый остаток</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="periodic">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>10</y>
+     <width>201</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Rubik</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>раз в год</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>раз в месяц</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>раз в квартал</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
